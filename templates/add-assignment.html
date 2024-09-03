@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Assignment - DigitalOwl</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div id="file-viewer">
+        <img id="image-viewer" draggable="false">
+        <div id="options">
+            <div>
+                <ul>
+                    <li id="annotation"><img src="/static/images/annotation-icon.svg"><span>Annotate</span></li>
+                    
+                    <li id="field"><img src="/static/images/field-icon.svg"><span>Field</span></li>
+                    
+                    <li id="drag" style="background-color: lightgrey;"><img src="/static/images/drag-icon.svg"><span>Drag</span></li>
+                    
+                    <li id="erase"><img src="/static/images/erase-icon.svg"><span>Erase</span></li>
+                    
+                    <li id="undo"><img src="/static/images/undo-icon.svg"><span>Undo</span></li>
+                                        
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <form id="assignment-upload" method="POST">
+        <h2>Create Assignment</h2>
+        <label for="assignment-name">Assignment Name</label>
+        <input type="text" name="assignment-name" required>
+        <label for="assignment-description">Assignment Description</label>
+        <input type="text" name="assignment-description" required>
+        <label id="file-label" for="file">Drop a file here</label>
+        <input id="assignment-file" type="file" name="file" accept="image/*" required>
+        <button type="submit">Post</button>
+    </form>
+    
+    <script src="/static/js/assignment-editor.js"></script>
+</body>
+</html>

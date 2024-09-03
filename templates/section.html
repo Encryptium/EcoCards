@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ section[1] }} - DigitalOwl</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <div id="dashboard-nav">
+        <div id="logo">
+            <h1>DigitalOwl</h1>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="progress">
+            <h1>{{ section[1] }}</h1>
+            <p>Assignments</p>
+            <div id="lists">
+                {% for assignment in assignments %}
+                <div>
+                    <h2>{{ assignment[1] }}</h2>
+                    <p>{{ assignment[2] }}</p>
+                    <span>Progress: {{ assignment[3] }}%</span>
+                    <progress value="{{ assignment[3] }}" max="100"></progress>
+                    <a href="/practice/{{ assignment[0] }}">Practice</a>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
